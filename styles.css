@@ -1,0 +1,535 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background:
+        radial-gradient(circle at top center, rgba(212, 175, 55, 0.14) 0%, rgba(255, 255, 255, 0) 48%),
+        linear-gradient(180deg, #ffffff 0%, #fcf8ee 48%, #f5ebd2 100%);
+    color: #2c2a29;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Marco nupcial elegante en las orillas */
+.wedding-frame {
+    position: fixed;
+    inset: 14px;
+    border: 1.5px solid rgba(184, 146, 58, 0.45);
+    pointer-events: none;
+    z-index: 40;
+}
+
+.wedding-frame::before {
+    content: "";
+    position: fixed;
+    inset: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    pointer-events: none;
+}
+
+.frame-corner {
+    position: fixed;
+    width: 56px;
+    height: 56px;
+    pointer-events: none;
+    z-index: 45;
+    opacity: 0.75;
+}
+
+.frame-corner--tl {
+    top: 10px;
+    left: 10px;
+    border-top: 3px solid #b8923a;
+    border-left: 3px solid #b8923a;
+}
+
+.frame-corner--tr {
+    top: 10px;
+    right: 10px;
+    border-top: 3px solid #b8923a;
+    border-right: 3px solid #b8923a;
+}
+
+.frame-corner--bl {
+    bottom: 10px;
+    left: 10px;
+    border-bottom: 3px solid #b8923a;
+    border-left: 3px solid #b8923a;
+}
+
+.frame-corner--br {
+    bottom: 10px;
+    right: 10px;
+    border-bottom: 3px solid #b8923a;
+    border-right: 3px solid #b8923a;
+}
+
+/* Enredadera floral cubriendo todo el lateral derecho */
+.side-floral-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: auto;
+    max-width: 240px;
+    object-fit: cover;
+    object-position: right center;
+    pointer-events: none;
+    z-index: 30;
+    opacity: 0.88;
+}
+
+/* Flor metálica asentada en la esquina inferior izquierda */
+.floral-accent {
+    position: fixed;
+    pointer-events: none;
+    z-index: 36;
+    filter: drop-shadow(0 8px 16px rgba(120, 102, 65, 0.16));
+}
+
+.floral-accent--bottom-left {
+    bottom: 0;
+    left: 6px;
+    width: 195px;
+}
+
+@media (max-width: 768px) {
+    .side-floral-right {
+        max-width: 110px;
+        opacity: 0.5;
+    }
+
+    .floral-accent--bottom-left {
+        width: 135px;
+        bottom: 0;
+        left: 4px;
+    }
+}
+
+/* Portada (Hero) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    width: 100%;
+    position: relative;
+    z-index: 20;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #dfc482;
+    outline: 6px solid rgba(197, 160, 73, 0.12);
+    padding: 40px 30px 48px;
+    border-radius: 22px;
+    max-width: 460px;
+    width: 100%;
+    box-shadow: 0 16px 38px rgba(156, 122, 44, 0.12);
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.doves-rings-img {
+    width: 165px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(143, 110, 34, 0.18));
+}
+
+.sub-title {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2.5px;
+    font-size: 0.78rem;
+    color: #9c7a2c;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.3rem;
+    color: #2c2a29;
+    font-weight: normal;
+    line-height: 1.15;
+}
+
+.divider {
+    height: 1px;
+    width: 90px;
+    background: linear-gradient(90deg, transparent, #c5a049, transparent);
+    margin: 20px auto;
+}
+
+.quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.96rem;
+    color: #5c5652;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Botón principal */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ffffff;
+    border: 1.5px solid #b8923a;
+    color: #8f6e22;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    background-color: #b8923a;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(184, 146, 58, 0.25);
+}
+
+/* Sección de Invitación y Detalles */
+.details, .rsvp {
+    width: 100%;
+    max-width: 540px;
+    padding: 64px 20px;
+    position: relative;
+    z-index: 20;
+}
+
+.details h2, .rsvp h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #2c2a29;
+    font-weight: normal;
+    margin-bottom: 2px;
+}
+
+.rsvp h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem;
+}
+
+.dots {
+    color: #b8923a;
+    font-size: 0.85rem;
+    margin-bottom: 26px;
+}
+
+/* Caja de Padres y Padrinos */
+.family-box {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #e3cb92;
+    border-radius: 18px;
+    padding: 28px 22px;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 26px rgba(156, 122, 44, 0.08);
+}
+
+.family-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.family-col h3, .godparents h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: #8f6e22;
+    margin-bottom: 8px;
+}
+
+.family-col p, .godparents p {
+    font-size: 0.88rem;
+    color: #4a4542;
+    line-height: 1.5;
+}
+
+.godparents {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #ebd9ad;
+}
+
+/* Tarjetas de Detalles */
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #e3cb92;
+    padding: 22px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-align: left;
+    box-shadow: 0 10px 26px rgba(156, 122, 44, 0.08);
+}
+
+.icon-info {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fbf7ec;
+    border: 1px solid #e3cb92;
+    color: #8f6e22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: #2c2a29;
+    margin-bottom: 4px;
+}
+
+.event-time {
+    color: #8f6e22;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.event-place {
+    color: #5c5652;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.note {
+    font-size: 0.8rem;
+    color: #78716c;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+.map-link {
+    display: inline-block;
+    color: #8f6e22;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+}
+
+/* RSVP */
+.rsvp-text {
+    color: #5c5652;
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 14px 30px;
+    background-color: #25d366;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+}
+
+footer {
+    padding: 36px 20px 60px;
+    color: #78716c;
+    font-size: 0.88rem;
+    position: relative;
+    z-index: 20;
+}
+
+.footer-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #8f6e22;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 480px) {
+    .family-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .wedding-frame {
+        inset: 10px;
+    }
+
+    .wedding-frame::before {
+        inset: 14px;
+    }
+
+    .frame-corner {
+        width: 38px;
+        height: 38px;
+    }
+
+    .doves-rings-img {
+        width: 135px;
+    }
+}
+
+/* Animación de 6 palomas blancas elegantes en vuelo lento */
+.doves-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.dove {
+    position: absolute;
+    height: auto;
+    opacity: 0;
+    filter: drop-shadow(0 8px 16px rgba(143, 110, 34, 0.28));
+    will-change: transform, opacity;
+}
+
+.dove svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: wingFlap 0.65s ease-in-out infinite alternate;
+}
+
+.dove--1 {
+    top: 18%;
+    left: -14%;
+    width: 78px;
+    animation: flyDoveA 4.8s cubic-bezier(0.25, 0.75, 0.35, 1) 0s forwards;
+}
+
+.dove--2 {
+    top: 31%;
+    left: -16%;
+    width: 66px;
+    animation: flyDoveB 5.2s cubic-bezier(0.25, 0.75, 0.35, 1) 0.35s forwards;
+}
+
+.dove--3 {
+    top: 44%;
+    left: -15%;
+    width: 74px;
+    animation: flyDoveC 5.0s cubic-bezier(0.25, 0.75, 0.35, 1) 0.7s forwards;
+}
+
+.dove--4 {
+    top: 56%;
+    left: -17%;
+    width: 62px;
+    animation: flyDoveB 5.4s cubic-bezier(0.25, 0.75, 0.35, 1) 1.05s forwards;
+}
+
+.dove--5 {
+    top: 68%;
+    left: -16%;
+    width: 70px;
+    animation: flyDoveA 5.1s cubic-bezier(0.25, 0.75, 0.35, 1) 1.4s forwards;
+}
+
+.dove--6 {
+    top: 78%;
+    left: -15%;
+    width: 60px;
+    animation: flyDoveC 5.5s cubic-bezier(0.25, 0.75, 0.35, 1) 1.75s forwards;
+}
+
+@keyframes wingFlap {
+    0% {
+        transform: rotate(-7deg) scaleY(0.93);
+    }
+    100% {
+        transform: rotate(7deg) scaleY(1.05);
+    }
+}
+
+@keyframes flyDoveA {
+    0% {
+        transform: translate3d(0, 18px, 0) scale(0.92);
+        opacity: 0;
+    }
+    14% {
+        opacity: 1;
+    }
+    86% {
+        opacity: 0.96;
+    }
+    100% {
+        transform: translate3d(122vw, -78px, 0) scale(1.04);
+        opacity: 0;
+    }
+}
+
+@keyframes flyDoveB {
+    0% {
+        transform: translate3d(0, -10px, 0) scale(0.9);
+        opacity: 0;
+    }
+    14% {
+        opacity: 1;
+    }
+    86% {
+        opacity: 0.95;
+    }
+    100% {
+        transform: translate3d(124vw, -48px, 0) scale(1.02);
+        opacity: 0;
+    }
+}
+
+@keyframes flyDoveC {
+    0% {
+        transform: translate3d(0, 22px, 0) scale(0.88);
+        opacity: 0;
+    }
+    14% {
+        opacity: 1;
+    }
+    86% {
+        opacity: 0.95;
+    }
+    100% {
+        transform: translate3d(122vw, -92px, 0) scale(1.05);
+        opacity: 0;
+    }
+}
