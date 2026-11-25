@@ -73,7 +73,7 @@ body {
     border-right: 3px solid #b8923a;
 }
 
-/* Enredadera floral cubriendo todo el lateral derecho */
+/* Enredadera floral detrás del contenido para nunca tapar el texto */
 .side-floral-right {
     position: fixed;
     top: 0;
@@ -84,15 +84,15 @@ body {
     object-fit: cover;
     object-position: right center;
     pointer-events: none;
-    z-index: 30;
+    z-index: 5;
     opacity: 0.88;
 }
 
-/* Flor metálica asentada en la esquina inferior izquierda */
+/* Flor metálica asentada en la esquina inferior izquierda (detrás de tarjetas) */
 .floral-accent {
     position: fixed;
     pointer-events: none;
-    z-index: 36;
+    z-index: 6;
     filter: drop-shadow(0 8px 16px rgba(120, 102, 65, 0.16));
 }
 
@@ -102,16 +102,18 @@ body {
     width: 195px;
 }
 
+/* Ajuste responsivo para tablets y teléfonos */
 @media (max-width: 768px) {
     .side-floral-right {
-        max-width: 110px;
-        opacity: 0.5;
+        max-width: 92px;
+        opacity: 0.42;
     }
 
     .floral-accent--bottom-left {
-        width: 135px;
+        width: 115px;
         bottom: 0;
-        left: 4px;
+        left: 2px;
+        opacity: 0.65;
     }
 }
 
@@ -131,7 +133,7 @@ body {
     background: rgba(255, 255, 255, 0.96);
     border: 1px solid #dfc482;
     outline: 6px solid rgba(197, 160, 73, 0.12);
-    padding: 40px 30px 48px;
+    padding: 40px 28px 48px;
     border-radius: 22px;
     max-width: 460px;
     width: 100%;
@@ -403,8 +405,16 @@ footer {
         height: 38px;
     }
 
+    .card {
+        padding: 32px 20px 38px;
+    }
+
+    .names {
+        font-size: 2.75rem;
+    }
+
     .doves-rings-img {
-        width: 135px;
+        width: 130px;
     }
 }
 
