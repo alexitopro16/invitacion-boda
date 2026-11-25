@@ -80,15 +80,15 @@ body {
     right: 0;
     height: 100vh;
     width: auto;
-    max-width: 240px;
+    max-width: 220px;
     object-fit: cover;
     object-position: right center;
     pointer-events: none;
     z-index: 5;
-    opacity: 0.88;
+    opacity: 0.85;
 }
 
-/* Flor metálica asentada en la esquina inferior izquierda (detrás de tarjetas) */
+/* Flor metálica asentada en la esquina inferior izquierda */
 .floral-accent {
     position: fixed;
     pointer-events: none;
@@ -105,15 +105,15 @@ body {
 /* Ajuste responsivo para tablets y teléfonos */
 @media (max-width: 768px) {
     .side-floral-right {
-        max-width: 92px;
-        opacity: 0.42;
+        max-width: 34px;
+        opacity: 0.35;
     }
 
     .floral-accent--bottom-left {
-        width: 115px;
+        width: 95px;
         bottom: 0;
         left: 2px;
-        opacity: 0.65;
+        opacity: 0.45;
     }
 }
 
@@ -130,7 +130,9 @@ body {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.96);
+    position: relative;
+    z-index: 25;
+    background: rgba(255, 255, 255, 0.98);
     border: 1px solid #dfc482;
     outline: 6px solid rgba(197, 160, 73, 0.12);
     padding: 40px 28px 48px;
@@ -239,7 +241,9 @@ body {
 
 /* Caja de Padres y Padrinos */
 .family-box {
-    background: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 25;
+    background: rgba(255, 255, 255, 0.96);
     border: 1px solid #e3cb92;
     border-radius: 18px;
     padding: 28px 22px;
@@ -280,7 +284,9 @@ body {
 }
 
 .info-card {
-    background: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 25;
+    background: rgba(255, 255, 255, 0.96);
     border: 1px solid #e3cb92;
     padding: 22px;
     border-radius: 16px;
