@@ -11,6 +11,20 @@
 </head>
 <body class="is-locked">
 
+    <!-- Estrellitas y puntitos blancos flotando en el fondo -->
+    <div class="sparkles-layer" aria-hidden="true">
+        <span class="sparkle sparkle--1">✦</span>
+        <span class="sparkle sparkle--2">•</span>
+        <span class="sparkle sparkle--3">✧</span>
+        <span class="sparkle sparkle--4">•</span>
+        <span class="sparkle sparkle--5">✦</span>
+        <span class="sparkle sparkle--6">•</span>
+        <span class="sparkle sparkle--7">✧</span>
+        <span class="sparkle sparkle--8">•</span>
+        <span class="sparkle sparkle--9">✦</span>
+        <span class="sparkle sparkle--10">•</span>
+    </div>
+
     <!-- Marco decorativo en los bordes -->
     <div class="wedding-frame" aria-hidden="true"></div>
     <span class="frame-corner frame-corner--tl" aria-hidden="true"></span>
@@ -148,7 +162,6 @@
         const verInvitacionBtn = document.getElementById('ver-invitacion-btn');
         const invitacionSection = document.getElementById('invitacion');
 
-        // Asegura empezar arriba mientras está bloqueado
         window.scrollTo(0, 0);
 
         function initRevealObserver() {

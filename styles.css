@@ -26,6 +26,57 @@ body.is-locked {
     height: 100vh;
 }
 
+/* Estrellas y puntitos blancos flotando */
+.sparkles-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 12;
+}
+
+.sparkle {
+    position: absolute;
+    color: #ffffff;
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.95),
+        0 0 14px rgba(212, 175, 55, 0.65);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.sparkle--1 { left: 10%; top: 105%; font-size: 15px; animation: floatStarUp 11s linear 0s infinite; }
+.sparkle--2 { left: 22%; top: 108%; font-size: 18px; animation: floatStarUp 9.5s linear 1.2s infinite; }
+.sparkle--3 { left: 35%; top: 104%; font-size: 16px; animation: floatStarUp 12s linear 2.4s infinite; }
+.sparkle--4 { left: 48%; top: 110%; font-size: 16px; animation: floatStarUp 10s linear 3.6s infinite; }
+.sparkle--5 { left: 60%; top: 106%; font-size: 15px; animation: floatStarUp 11.5s linear 4.8s infinite; }
+.sparkle--6 { left: 72%; top: 109%; font-size: 20px; animation: floatStarUp 9.8s linear 1.9s infinite; }
+.sparkle--7 { left: 82%; top: 105%; font-size: 17px; animation: floatStarUp 12.5s linear 3.1s infinite; }
+.sparkle--8 { left: 90%; top: 107%; font-size: 16px; animation: floatStarUp 10.5s linear 5.4s infinite; }
+.sparkle--9 { left: 16%; top: 112%; font-size: 14px; animation: floatStarUp 13s linear 6.2s infinite; }
+.sparkle--10 { left: 54%; top: 112%; font-size: 19px; animation: floatStarUp 10.8s linear 7.1s infinite; }
+
+@keyframes floatStarUp {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.75) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.95;
+    }
+    50% {
+        transform: translate3d(18px, -55vh, 0) scale(1.1) rotate(90deg);
+        opacity: 0.85;
+    }
+    85% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate3d(-14px, -115vh, 0) scale(0.85) rotate(180deg);
+        opacity: 0;
+    }
+}
+
 /* Marco nupcial elegante en las orillas */
 .wedding-frame {
     position: fixed;
@@ -190,9 +241,11 @@ body.is-locked {
     line-height: 1.15;
 }
 
-/* "&" más pequeña y elegante entre los nombres */
-.names .amp {
-    font-size: 0.66em;
+/* "&" dorado y más pequeño en portada, invitación y pie */
+.names .amp,
+.details h2 .amp,
+.footer-names .amp {
+    font-size: 0.58em;
     color: #9c7a2c;
     margin: 0 4px;
     vertical-align: middle;
@@ -434,11 +487,6 @@ footer {
     font-size: 2.2rem;
     color: #8f6e22;
     margin-bottom: 4px;
-}
-
-.footer-names .amp {
-    font-size: 0.68em;
-    margin: 0 3px;
 }
 
 @media (max-width: 480px) {
